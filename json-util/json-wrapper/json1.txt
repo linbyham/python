@@ -1,0 +1,16 @@
+{
+	"command_type": "alg_update",
+	"command_id": 123,
+	"sender": "xxx",
+	"receiver": "xxxx",
+	"msg_body": {
+		"alg": {
+			"id": 2,
+			"alg_desc": "混合车流量检测",
+			"alg_file_name": "xxxxxx",
+			"update_time": "2019-04-10T17:08:00",
+			"alg_file_url": "xxxxxx",
+			"main_exec_file": "xxxxxx"
+		}
+	}
+}

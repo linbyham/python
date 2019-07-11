@@ -1,0 +1,19 @@
+{
+	"command_type": "model_ update",
+	"command_id": 22,
+	"sender": "xxx",
+	"receiver": "xxxx",
+	"msg_body": {
+		"alg_model": {
+			"id": 1,
+			"model_desc": "车辆检测pascal_voc预训练模型",
+			"model_file_name": "xxxxx",
+			"version": "1.0",
+			"add_time": "2019-04-10T17:03:00",
+			"model_url": "xxxxx",
+			"update_type": 0,
+			"compress_type": 0
+		}
+
+	}
+}

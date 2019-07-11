@@ -1,0 +1,108 @@
+{
+	"command_type": "software_define",
+	"command_id": 123,
+	"sender": "xxx",
+	"receiver": "xxxx",
+	"msg_body": {
+		"alg_config": [{
+				"id": 2,
+				"output_result": true,
+				"output_video": true,
+				"output_feature": true,
+				"index": 1,
+				"rate": 100,
+				"terminal": 3,
+				"alg": {
+					"id": 2,
+					"alg_desc": "混合车流检测算法",
+					"alg_file_name": "alg_test",
+					"update_time": "2019-04-10T17:08:00",
+					"alg_file_url": "http://192.168.202.90:9000/minio/cloud1/car_detection_trt.tar.gz",
+					"main_exec_file": "car_detection_trt",
+					"alg_models": [{
+						"id": 1,
+						"model_desc": "混合车流检测模型",
+						"model_file_name": "car_detector.cfg",
+						"version": "1.0",
+						"add_time": "2019-04-10T17:03:00",
+						"model_url": "http://192.168.202.90:9000/minio/cloud1/car_detector.cfg",
+						"update_type": 0,
+						"compress_type": 0,
+						"json_url": null
+					}]
+				}
+			},
+			{
+				"id": 3,
+				"output_result": true,
+				"output_video": true,
+				"output_feature": true,
+				"index": 1,
+				"rate": 150,
+				"terminal": 3,
+				"alg": {
+					"id": 3,
+					"alg_desc": "司机异常行为检测",
+					"alg_file_name": "driver_classification.tar.gz",
+					"update_time": "2019-04-10T17:08:00",
+					"alg_file_url": "http://192.168.202.90:9000/minio/cloud1/driver_classification.tar.gz",
+					"main_exec_file": "run.py",
+					"alg_models": [{
+						"id": 1,
+						"model_desc": "司机异常行为检测预训练模型",
+						"model_file_name": "car_detector.cfg",
+						"version": "1.0",
+						"add_time": "2019-04-10T17:03:00",
+						"model_url": "http://192.168.202.90:9000/minio/cloud1/car_detector.cfg",
+						"update_type": 0,
+						"compress_type": 0,
+						"json_url": null
+					}]
+				}
+			},
+			{
+				"id": 4,
+				"output_result": true,
+				"output_video": true,
+				"output_feature": true,
+				"index": 1,
+				"rate": 3,
+				"terminal": 3,
+				"alg": {
+					"id": 4,
+					"alg_desc": "高点车辆统计",
+					"alg_file_name": "car_counting.tar.gz",
+					"update_time": "2019-04-10T17:08:00",
+					"alg_file_url": "http://192.168.202.90:9000/minio/cloud1/car_counting.tar.gz",
+					"main_exec_file": "run.py",
+					"alg_models": [{
+						"id": 1,
+						"model_desc": "车辆检测pascal_voc预训练模型",
+						"model_file_name": "car_detector.cfg",
+						"version": "1.0",
+						"add_time": "2019-04-10T17:03:00",
+						"model_url": "http://192.168.202.90:9000/minio/cloud1/car_detector.cfg",
+						"update_type": 0,
+						"compress_type": 0,
+						"json_url": null
+					}]
+				}
+			}
+		],
+		"preprocess_alg_config": [{
+			"id": 2,
+			"rate": 30,
+			"index": 1,
+			"terminal": 3,
+			"alg": {
+				"id": 1,
+				"alg_desc": "自动降噪",
+				"alg_file_name": "auto-denoising",
+				"update_time": "2019-04-11T22:56:00",
+				"alg_file_url": null,
+				"main_exec_file": null,
+				"alg_models": []
+			}
+		}]
+	}
+}

@@ -1,0 +1,347 @@
+{
+	"command_type": "cfg_update",
+	"command_id": 123,
+	"sender": "xxx",
+	"receiver": "xxxx",
+	"msg_body": {
+		"id": 3,
+		"terminal_name": "Jetson-Xavier开发板",
+		"device_uuid": "device1001",
+		"terminal_type": {
+			"id": 1,
+			"terminal_type_name": "虚拟摄像机"
+		},
+		"ip_addr": "192.168.112.87",
+		"address": "广东省",
+		"longitude": "22.5729032919",
+		"latitude": "113.9407968521",
+		"video_stream_addr": "rtsp://admin:pcl123456@192.168.112.219",
+		"video_stream_addr1": "rtsp://admin:admin123456@192.168.113.111",
+		"feature_stream_addr": "192.168.16.192:6001",
+		"terminal_model": "Jetson-Xavier",
+		"terminal_pic": null,
+		"encoder_type": {
+			"id": 2,
+			"encoder_type_name": "H.265"
+		},
+		"srv_info": {
+			"id": 1,
+			"name": "边缘服务器",
+			"port": 6000,
+			"ip": "192.168.25.58",
+			"upload_url": "http://minio.pcl-ai.ml:9000/result-bucket",
+			"username": "testAMQP",
+			"password": "pcl1211",
+			"srv_uuid": "server1002"
+		},
+		"stream_type": 0,
+		"terminal_status": 0,
+		"last_heart_beat": "2019-04-10T10:10:00",
+		"video_stream_srv": "rtmp://192.168.202.92:1935/myapp/device1001",
+		"video_stream_srv222": "rtmp://192.168.214.245:1935/myapp/device1001",
+		"video_stream_srv_reconnect": 30,
+		"video_stream_srv_protocol": "rtmp",
+		"cfg_info": "http://192.168.202.90:6134",
+		"media_info": "http://192.168.202.92:8080",
+		"heart_beat_interval": 5,
+		"output_result": true,
+		"output_feature": true,
+		"output_video": true,
+		"out_queue_name": "device1001_edge1001",
+		"in_queue_name": "edge1001_device1001",
+		"video_source_type": 0,
+		"local_file_path": "./616.mp4",
+		"local_file_array": ["./3_1.mp4", "./3_2.mp4", "./3_3.mp4"],
+		"video_start_time": 0,
+		"video_end_time": 0,
+		"oss_feature_folder_path": "./feature-bucket",
+		"oss_feature_url_path": "http://minio.pcl-ai.ml:9000/feature-bucket",
+		"oss_feature_save_interval": 60,
+		"oss_result_folder_path": "./result-bucket",
+		"oss_result_url_path": "http://minio.pcl-ai.ml:9000/result-bucket",
+		"oss_result_save_interval": 60,
+		"version": "4.0",
+		"mq_info": {
+			"id": 1,
+			"mq_name": "公网rabbitmq",
+			"mq_port": 5672,
+			"mq_srv_ip": "112.74.173.184",
+			"mq_username": "testAMQP",
+			"mq_password": "pcl1211"
+		},
+		"camera_resolution": {
+			"id": 1,
+			"width": 1920,
+			"height": 1080,
+			"fps": 150
+		},
+		"alg_config_bak": [{
+				"id": 2,
+				"output_result": true,
+				"output_video": true,
+				"output_feature": true,
+				"index": 1,
+				"rate": 100,
+				"terminal": 3,
+				"alg": {
+					"id": 2,
+					"alg_desc": "混合车流检测算法",
+					"alg_file_name": "alg_test",
+					"update_time": "2019-04-10T17:08:00",
+					"alg_file_url": "http://192.168.202.90:9000/minio/cloud1/car_detection_trt.tar.gz",
+					"main_exec_file": "car_detection_trt",
+					"alg_models": [{
+						"id": 1,
+						"model_desc": "混合车流检测模型",
+						"model_file_name": "car_detector.cfg",
+						"version": "1.0",
+						"add_time": "2019-04-10T17:03:00",
+						"model_url": "http://192.168.202.90:9000/minio/cloud1/car_detector.cfg",
+						"update_type": 0,
+						"compress_type": 0,
+						"json_url": null
+					}]
+				}
+			},
+			{
+				"id": 3,
+				"output_result": true,
+				"output_video": true,
+				"output_feature": true,
+				"index": 1,
+				"rate": 150,
+				"terminal": 3,
+				"alg": {
+					"id": 3,
+					"alg_desc": "司机异常行为检测",
+					"alg_file_name": "driver_classification.tar.gz",
+					"update_time": "2019-04-10T17:08:00",
+					"alg_file_url": "http://192.168.202.90:9000/minio/cloud1/driver_classification.tar.gz",
+					"main_exec_file": "run.py",
+					"alg_models": [{
+						"id": 1,
+						"model_desc": "司机异常行为检测预训练模型",
+						"model_file_name": "car_detector.cfg",
+						"version": "1.0",
+						"add_time": "2019-04-10T17:03:00",
+						"model_url": "http://192.168.202.90:9000/minio/cloud1/car_detector.cfg",
+						"update_type": 0,
+						"compress_type": 0,
+						"json_url": null
+					}]
+				}
+			},
+			{
+				"id": 4,
+				"output_result": true,
+				"output_video": true,
+				"output_feature": true,
+				"index": 1,
+				"rate": 3,
+				"terminal": 3,
+				"alg": {
+					"id": 4,
+					"alg_desc": "高点车辆统计",
+					"alg_file_name": "car_counting.tar.gz",
+					"update_time": "2019-04-10T17:08:00",
+					"alg_file_url": "http://192.168.202.90:9000/minio/cloud1/car_counting.tar.gz",
+					"main_exec_file": "run.py",
+					"alg_models": [{
+						"id": 1,
+						"model_desc": "车辆检测pascal_voc预训练模型",
+						"model_file_name": "car_detector.cfg",
+						"version": "1.0",
+						"add_time": "2019-04-10T17:03:00",
+						"model_url": "http://192.168.202.90:9000/minio/cloud1/car_detector.cfg",
+						"update_type": 0,
+						"compress_type": 0,
+						"json_url": null
+					}]
+				}
+			}
+		],
+		"alg_config_2": [{
+			"id": 2,
+			"output_result": true,
+			"output_video": true,
+			"output_feature": true,
+			"index": 1,
+			"rate": 100,
+			"terminal": 3,
+			"alg": {
+				"id": 2,
+				"alg_desc": "混合车流检测算法",
+				"alg_file_name": "alg_test",
+				"update_time": "2019-04-10T17:08:00",
+				"alg_file_url": "http://192.168.202.90:9000/minio/cloud1/car_detection_trt.tar.gz",
+				"main_exec_file": "car_detection_trt",
+				"alg_models": [{
+					"id": 1,
+					"model_desc": "混合车流检测模型",
+					"model_file_name": "car_detector.cfg",
+					"version": "1.0",
+					"add_time": "2019-04-10T17:03:00",
+					"model_url": "http://192.168.202.90:9000/minio/cloud1/car_detector.cfg",
+					"update_type": 0,
+					"compress_type": 0,
+					"json_url": null
+				}]
+			}
+		}],
+		"alg_config_3": [{
+			"id": 3,
+			"output_result": true,
+			"output_video": true,
+			"output_feature": true,
+			"index": 1,
+			"rate": 150,
+			"terminal": 3,
+			"alg": {
+				"id": 3,
+				"alg_desc": "司机异常行为检测",
+				"alg_file_name": "driver_classification.tar.gz",
+				"update_time": "2019-04-10T17:08:00",
+				"alg_file_url": "http://192.168.202.90:9000/minio/cloud1/driver_classification.tar.gz",
+				"main_exec_file": "run.py",
+				"alg_models": [{
+					"id": 1,
+					"model_desc": "司机异常行为检测预训练模型",
+					"model_file_name": "car_detector.cfg",
+					"version": "1.0",
+					"add_time": "2019-04-10T17:03:00",
+					"model_url": "http://192.168.202.90:9000/minio/cloud1/car_detector.cfg",
+					"update_type": 0,
+					"compress_type": 0,
+					"json_url": null
+				}]
+			}
+		}],
+		"alg_config_4": [{
+			"id": 4,
+			"output_result": true,
+			"output_video": true,
+			"output_feature": true,
+			"index": 1,
+			"rate": 3,
+			"terminal": 3,
+			"alg": {
+				"id": 4,
+				"alg_desc": "高点车辆统计",
+				"alg_file_name": "car_counting.tar.gz",
+				"update_time": "2019-04-10T17:08:00",
+				"alg_file_url": "http://192.168.202.90:9000/minio/cloud1/car_counting.tar.gz",
+				"main_exec_file": "run.py",
+				"alg_models": [{
+					"id": 1,
+					"model_desc": "车辆检测pascal_voc预训练模型",
+					"model_file_name": "car_detector.cfg",
+					"version": "1.0",
+					"add_time": "2019-04-10T17:03:00",
+					"model_url": "http://192.168.202.90:9000/minio/cloud1/car_detector.cfg",
+					"update_type": 0,
+					"compress_type": 0,
+					"json_url": null
+				}]
+			}
+		}],
+		"alg_config_5": [{
+			"id": 5,
+			"output_result": true,
+			"output_video": true,
+			"output_feature": false,
+			"index": 1,
+			"rate": 2,
+			"terminal": 3,
+			"alg": {
+				"id": 5,
+				"alg_desc": "公交站点人数统计",
+				"alg_file_name": "crowdcounting.tar.gz",
+				"update_time": "2019-04-10T17:08:00",
+				"alg_file_url": "http://192.168.202.90:9000/minio/cloud1/crowdcounting.tar.gz",
+				"main_exec_file": "run.py",
+				"alg_models": [{
+					"id": 1,
+					"model_desc": "人数统计模型",
+					"model_file_name": "car_detector.cfg",
+					"version": "1.0",
+					"add_time": "2019-04-10T17:03:00",
+					"model_url": "http://192.168.202.90:9000/minio/cloud1/car_detector.cfg",
+					"update_type": 0,
+					"compress_type": 0,
+					"json_url": null
+				}]
+			}
+		}],
+		"alg_config_6": [{
+			"id": 6,
+			"output_result": true,
+			"output_video": true,
+			"output_feature": true,
+			"index": 1,
+			"rate": 20,
+			"terminal": 3,
+			"alg": {
+				"id": 6,
+				"alg_desc": "特征提取算法",
+				"alg_file_name": "car_feature",
+				"update_time": "2019-04-10T17:08:00",
+				"alg_file_url": "http://192.168.202.90:9000/minio/cloud1/car_feature",
+				"main_exec_file": "car_feature",
+				"alg_models": [{
+					"id": 1,
+					"model_desc": "司机异常行为检测预训练模型",
+					"model_file_name": "car_detector.cfg",
+					"version": "1.0",
+					"add_time": "2019-04-10T17:03:00",
+					"model_url": "http://192.168.202.90:9000/minio/cloud1/car_detector.cfg",
+					"update_type": 0,
+					"compress_type": 0,
+					"json_url": null
+				}]
+			}
+		}],
+		"alg_config_test": [{
+			"id": 4,
+			"output_result": true,
+			"output_video": true,
+			"output_feature": true,
+			"index": 1,
+			"rate": 100,
+			"terminal": 3,
+			"alg": {
+				"id": 4,
+				"alg_desc": "模拟测试算法--模拟高点车辆统计",
+				"alg_file_name": "alg_test",
+				"update_time": "2019-04-10T17:08:00",
+				"alg_file_url": "http://192.168.202.90:9000/minio/cloud1/alg_test",
+				"main_exec_file": "alg_test",
+				"alg_models": [{
+					"id": 1,
+					"model_desc": "司机异常行为检测预训练模型",
+					"model_file_name": "car_detector.cfg",
+					"version": "1.0",
+					"add_time": "2019-04-10T17:03:00",
+					"model_url": "http://192.168.202.90:9000/minio/cloud1/car_detector.cfg",
+					"update_type": 0,
+					"compress_type": 0,
+					"json_url": null
+				}]
+			}
+		}],
+		"preprocess_alg_config_test": [{
+			"id": 2,
+			"rate": 30,
+			"index": 1,
+			"terminal": 3,
+			"alg": {
+				"id": 1,
+				"alg_desc": "自动降噪",
+				"alg_file_name": "auto-denoising",
+				"update_time": "2019-04-11T22:56:00",
+				"alg_file_url": null,
+				"main_exec_file": null,
+				"alg_models": []
+			}
+		}]
+	}
+}
